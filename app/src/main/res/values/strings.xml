@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">TrabalhoPratico1</string>
+
+    <string-array name="tipos_chamado">
+        <item>TI</item>
+        <item>Infraestrutura</item>
+    </string-array>
+
+    <string-array name="opcoes_status">
+        <item>Aberto</item>
+        <item>Em Atendimento</item>
+        <item>Concluído</item>
+    </string-array>
+
+    <string-array name="filtros_status">
+        <item>Todos</item>
+        <item>Aberto</item>
+        <item>Em Atendimento</item>
+        <item>Concluído</item>
+    </string-array>
+</resources>
