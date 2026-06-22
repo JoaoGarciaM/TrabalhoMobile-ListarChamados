@@ -2,8 +2,6 @@ package com.example.trabalhopratico1;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -15,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import java.text.BreakIterator;
 
 public class AtendimentoActivity extends AppCompatActivity {
 
@@ -34,16 +30,23 @@ public class AtendimentoActivity extends AppCompatActivity {
 
         Chamado chamado = (Chamado) getIntent().getSerializableExtra("chamado_selecionado");
 
+        if (chamado == null) {
+            Toast.makeText(this, "Erro: chamado não encontrado", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
+
         TextView tvTitulo = findViewById(R.id.txtDetTitulo);
         TextView tvDataLocal = findViewById(R.id.txtDetDataLocal);
         EditText editSolucao = findViewById(R.id.editSolucao);
         Spinner spinnerStatus = findViewById(R.id.spinnerStatus);
         Button btnFinalizar = findViewById(R.id.btnFinalizarAtendimento);
+        Button btnVoltar = findViewById(R.id.btnVoltar);
 
-        if (chamado != null) {
-            tvTitulo.setText("Problema: " + chamado.getTitulo());
-            tvDataLocal.setText("Data: " + chamado.getData() + " | Local: " + chamado.getLocal());
-        }
+        tvTitulo.setText("Problema: " + chamado.getTitulo());
+        tvDataLocal.setText("Data: " + chamado.getData() + " | Local: " + chamado.getLocal());
+
+        btnVoltar.setOnClickListener(v -> finish());
 
         btnFinalizar.setOnClickListener(v -> {
             String solucaoTexto = editSolucao.getText().toString();
@@ -56,7 +59,6 @@ public class AtendimentoActivity extends AppCompatActivity {
                 chamado.setStatus(novoStatus);
 
                 DBHelper db = new DBHelper(AtendimentoActivity.this);
-
                 db.atualizarChamado(chamado);
 
                 Toast.makeText(this, "Atendimento registrado!", Toast.LENGTH_SHORT).show();

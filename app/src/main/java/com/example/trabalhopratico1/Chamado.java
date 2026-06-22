@@ -11,7 +11,7 @@ public class Chamado implements Serializable {
     private String descricao;
     private String status;
     private String solucao;
-
+    private String caminhoImagem;
 
     public Chamado(String titulo, String local, String tipo, String descricao, String data) {
         this.titulo = titulo;
@@ -19,13 +19,9 @@ public class Chamado implements Serializable {
         this.tipo = tipo;
         this.descricao = descricao;
         this.data = data;
-        this.status = "Aberto";
     }
 
-    // Getters (para o Adapter conseguir ler depois)
-
     public int getId() { return id; }
-
     public void setId(int id) { this.id = id; }
     public String getDescricao() { return descricao; }
     public String getTitulo() { return titulo; }
@@ -34,8 +30,9 @@ public class Chamado implements Serializable {
     public String getData() { return data; }
     public String getStatus() { return status; }
     public String getSolucao() { return solucao; }
+    public String getCaminhoImagem() { return caminhoImagem; }
 
-    // Setter para o Status
     public void setStatus(String status) { this.status = status; }
     public void setSolucao(String solucao) { this.solucao = solucao; }
+    public void setCaminhoImagem(String caminhoImagem) { this.caminhoImagem = caminhoImagem; }
 }

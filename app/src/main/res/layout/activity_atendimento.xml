@@ -108,5 +108,13 @@
             android:text="FINALIZAR ATENDIMENTO"
             app:cornerRadius="12dp" />
 
+        <Button
+            android:id="@+id/btnVoltar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="VOLTAR"
+            app:cornerRadius="8dp" />
+
     </LinearLayout>
 </ScrollView>

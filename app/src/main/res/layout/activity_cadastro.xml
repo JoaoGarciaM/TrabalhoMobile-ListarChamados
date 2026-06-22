@@ -24,6 +24,7 @@
             android:textSize="26sp"
             android:textStyle="bold" />
 
+        <!-- Card: Dados do chamado -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,7 +65,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Localização"
+                    android:text="Local do problema"
                     android:textColor="#757575"
                     android:textSize="12sp" />
 
@@ -105,6 +106,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Tipo de Serviço -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -117,18 +119,73 @@
             android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             android:entries="@array/tipos_chamado"
             android:backgroundTint="#000000"
             android:spinnerMode="dropdown"
             android:theme="@style/ThemeOverlay.AppCompat.Light" />
 
+        <!-- Status -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerStatus"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="16dp"
+            android:entries="@array/opcoes_status"
+            android:backgroundTint="#000000"
+            android:spinnerMode="dropdown"
+            android:theme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <!-- Captura de Imagem -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Evidência Fotográfica"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnCapturarFoto"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="📷 CAPTURAR FOTO"
+            android:layout_marginBottom="8dp"
+            app:cornerRadius="8dp" />
+
+        <ImageView
+            android:id="@+id/imageViewPreview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:background="#E0E0E0"
+            android:contentDescription="Pré-visualização da imagem"
+            android:visibility="gone"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Botão Salvar -->
         <Button
             android:id="@+id/salvarchamado"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="CADASTRAR CHAMADO"
             app:cornerRadius="12dp" />
+
+        <Button
+            android:id="@+id/btnVoltar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="VOLTAR"
+            app:cornerRadius="8dp" />
 
     </LinearLayout>
 </ScrollView>

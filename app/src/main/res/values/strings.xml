@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">TrabalhoPratico1</string>
+    <string name="app_name">Gestão de Chamados</string>
+    <string name="navigation_drawer_open">Abrir menu</string>
+    <string name="navigation_drawer_close">Fechar menu</string>
 
     <string-array name="tipos_chamado">
         <item>TI</item>
@@ -8,14 +10,14 @@
 
     <string-array name="opcoes_status">
         <item>Aberto</item>
-        <item>Em Atendimento</item>
+        <item>Em andamento</item>
         <item>Concluído</item>
     </string-array>
 
     <string-array name="filtros_status">
         <item>Todos</item>
         <item>Aberto</item>
-        <item>Em Atendimento</item>
+        <item>Em andamento</item>
         <item>Concluído</item>
     </string-array>
 </resources>
